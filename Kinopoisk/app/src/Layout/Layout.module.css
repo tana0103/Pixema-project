@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Inter:wght@700&family=Open+Sans:ital,wght@0,700;1,400&family=Raleway:wght@500&family=Roboto+Condensed:ital,wght@1,300;1,400;1,700&family=Sassy+Frass&display=swap');
+
+.layout{
+	z-index: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.nav {
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	font-size: 30px;
+	position: fixed;
+	/* padding: auto;
+	margin: 0 auto; */
+	margin-top: 20px;
+	z-index: 2;
+}
+
+.logo {
+	width: 15%;
+}
+
+.burger {
+	display: none;
+	width: 25%;
+}
+
+label {
+	margin: 10px;
+	padding: 0;
+}
+
+.search {
+	width: 60%;
+	text-decoration: none;
+	align-items: center;
+}
+
+.user {
+	width: 25%;
+	text-decoration: none;
+}
+
+.leftmenu {
+	width: 20%;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	margin-top: 70px;
+	position: fixed;
+	min-width: 15%;
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 19px;
+	line-height: 24px;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 20px; 
+	height: 90vh;
+}
+
+/* .leftmenu:last-child{
+	
+} */
+
+article {
+	padding: 15px;
+}
+
+main {
+	padding-top: 110px;
+}
+
+@media (max-width: 1000px) {
+	.logo {
+			width: 20%;
+		}
+
+	.burger {
+		display: flex;
+		width: 15%;
+		order: 1;
+	}
+
+	.user {
+		display: none;
+		width: 0%;
+	}
+
+	.leftmenu{
+		display: none;
+	}
+}
+
+@media (max-width: 650px) {
+	.nav{
+		flex-wrap: wrap;
+		margin: 20px 0px;
+		padding: 10px;
+	}
+
+	label{
+		margin: 15px 0;
+		padding: 0;
+	}
+
+	.logo {
+		width: 70%;
+	}
+
+	.burger {
+		display: flex;
+		width: 30%;
+		order: 0;
+	}
+
+	.search {
+		width: 100%;
+margin: 0px;
+padding: 0px;
+	}
+
+	.user {
+		display: none;
+	}
+
+	main {
+		padding-top: 170px;
+	}
+		.leftmenu {
+			display: none;
+			width: 0;
+		}
+}

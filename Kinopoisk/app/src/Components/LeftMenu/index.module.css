@@ -1,0 +1,7 @@
+.last{
+	display: flex;
+	padding-left: 20px;
+	align-items:flex-end;
+	height: 420px;
+	color: #80858B;
+}

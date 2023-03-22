@@ -1,0 +1,97 @@
+form{
+	margin-left: 15%;
+	margin-right: 5%;
+}
+
+.title {
+	width: 212px;
+	height: 30px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 80px;
+	display: flex;
+	align-items: center;
+	margin: 10px;
+}
+
+.formprofile{
+	box-sizing: border-box;
+}
+
+.blok1{
+	display: flex;
+	background: #242426;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	justify-content: space-between;
+	color: #80858B;
+}
+
+.namelabel{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align: start;
+	width: 40%;
+}
+
+/* label{
+	padding-left: 15px;
+} */
+
+.input{
+	height: 50px;
+	display: flex;
+	align-items: flex-start;
+	margin: 10px 0;
+}
+
+.blok2 {
+	display: flex;
+	background: #242426;
+	color: #80858B;
+	border-radius: 10px;
+	flex-direction:row-reverse;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	
+}
+
+.dark{
+	margin-left: 25px;
+	text-align: start;
+	flex-direction: column;
+}
+
+.darkbtn {
+	display: flex;
+	margin: 0 25px;
+	text-align: start;
+	align-items: center;
+	justify-content: center;
+}
+/* .blok2:last-child{
+	display: flex;
+	align-items: flex-end;
+} */
+/* 
+@media (max-widtn:1130) {
+	.namelabel {
+		width: 40%;
+	}
+} */
+.range{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inputrange{
+	width: 25%;
+	margin: 0 10px ;
+}
+
+

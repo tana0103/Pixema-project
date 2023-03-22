@@ -1,0 +1,31 @@
+.form{
+	border: 1px solid gray;
+	padding: 15px;
+	font-size: 18px;
+	color: black;
+	background: #E5E5E5;
+	margin: 30px;
+	
+}
+
+.btnconfirm{
+	background: blue;
+	align-items: center;
+	justify-content: center;
+	color: #E5E5E5;
+	height: 40px;
+	margin: auto;
+	width: 50%;
+	font-size: 18px;
+}
+
+.divtitle{
+	width: 100%;
+	margin-top: 20px;
+	font-size: 55px;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+}
