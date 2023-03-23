@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate, useParams } from 'react-router-dom'
+import { newPasswordAsyncAction } from '../../AppGlobalStore/ChangePassword/action'
 import { darkThemeAction, lightThemeAction } from '../../AppGlobalStore/Theme/reduser'
 import style from './Profile.module.css'
 
 export const Profile = () => {
 	const dispatch = useDispatch()
 	const [stateRangeValue, setStateRangeValue] = useState(100)
+	const navigate = useNavigate()
+	const params = useParams()
+	const {uid, token} = params
 	
 	const changeRangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const currentValue = +e.currentTarget.value
@@ -18,6 +23,36 @@ export const Profile = () => {
 		dispatch(lightThemeAction())
 	}
 	
+
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		password: '',
+		confirmPassword: ''
+	})
+
+	const changePasswordValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setFormData({
+			...formData,
+			password: currentValue
+		})
+	}
+
+	const changeConfirmPasswordValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setFormData({
+			...formData,
+			confirmPassword: currentValue
+		})
+	}
+	
+	const changePassword = () => {
+		if (formData.password === formData.confirmPassword) {
+			dispatch(newPasswordAsyncAction(params.uid!, formData.confirmPassword, () => navigate('login')))
+		}
+	}
+
   return (
 	  <form className={style.formprofile}>
 		  <title className={style.title}>Profile</title>
@@ -35,12 +70,13 @@ export const Profile = () => {
 				  <input className={style.input} />
 			  </label >
 			  <label className={style.namelabel}>Password
-				  <input className={style.input} />
+				  <input className={style.input} value={formData.password} onChange={changePasswordValue} />
 			  </label>
-			  <label className={style.namelabel}>Confirm password
-				  <input className={style.input} />
+			  <label className={style.namelabel} >Confirm password
+				  <input className={style.input} value={formData.confirmPassword} onChange={changeConfirmPasswordValue} />
 			  </label>
 		  </div>
+		  <div><button onClick={changePassword}>ChangePassword</button></div>
 		  <title className={style.title}>Color mode</title>
 		  <div className={style.blok1}>
 			  <div className={style.dark}>

@@ -55,9 +55,9 @@ export const registerUserAsyncAction = (username: string, email: string, passwor
 
 export const activateUserAsyncAction = (uid: string, token: string, cb: () => void): any => {
 	return async (dispatch: AppGlobalDispatch) => {
-		debugger
+		
 		const result = await activateUser(uid, token)
-		debugger
+		
 		if (result.ok) {
 			dispatch(activationSuccessAction())
 			cb()
