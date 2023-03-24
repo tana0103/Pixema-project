@@ -12,14 +12,16 @@ import { TitlePage } from '../Components/TitlePage/TitlePage';
 import { TrendsCard } from '../Components/TrendsCard/TrendsCard';
 import { Layout } from '../Layout/Layout';
 import { Navigate } from "react-router-dom";
+import { ShowCardFavorites } from '../Components/Favorites/ShowCardFavorites/ShowCardFavorites';
 
 export const Routs = () => {
   return (
 	  <Routes>
 		  <Route path='/' element={<Layout />} >
 			  <Route index element={<TitlePage />} />
-			  <Route path='home' element={<Profile />} />
+			  <Route path='settings' element={<Profile />} />
 			  <Route path='trends' element={<TrendsCard />} />
+			  <Route path='favorites' element={<ShowCardFavorites />} />
 			  <Route path='search' element={<ShowCardSearch />} />
 			  <Route path='search/id' element={<ShowCardSearch />} />
 			  <Route path='user' element={<SignUp />} />

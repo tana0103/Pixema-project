@@ -1,4 +1,3 @@
-import React from 'react'
 import { GetPostList } from '../../Services/CardPostService'
 import { AppGlobalDispatch } from '../globalStore'
 import { PostType } from '../../Tools/types'

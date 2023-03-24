@@ -6,11 +6,11 @@ import thunkMiddleware from 'redux-thunk'
 import { activateReducer, registerReducer } from './Register/reducer';
 import { authReducer } from './Auth/reducer';
 import { myPostReducer } from './posts/reducer';
-import { myFavoritePostsReducer } from './MyFavoritePost/reducer';
 import { getUserMeReducer } from './UserMe/reducer';
 import { genreReducer } from './СhoiceGenre/reducer';
 import { themeReducer } from './Theme/reduser';
 import { searchReducer } from './SearchReducer/SearchReduser';
+import { myFavoriteMoviesReducer } from './MyFavoriteMovies/reducer';
 
 export const globalReducer = combineReducers({
 	// modal: modalWinReducer,
@@ -20,7 +20,7 @@ export const globalReducer = combineReducers({
 	activate: activateReducer,
 	auth: authReducer,
 	myPosts: myPostReducer,
-	myFavoritePosts: myFavoritePostsReducer,
+	myFavoriteMovies: myFavoriteMoviesReducer,
 	userName: getUserMeReducer,
 	genres: genreReducer,
 	theme: themeReducer,

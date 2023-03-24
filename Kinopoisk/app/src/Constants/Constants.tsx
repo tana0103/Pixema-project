@@ -1,6 +1,6 @@
 export const API_URL = 'https://api.kinopoisk.dev';
-// export const API_KEY = 'AY0JY2B-G7PMWET-HCSFNV0-4YG14TG';
-export const API_KEY = '57M8D3Z-6R5MVH5-JBYJ6KR-VQPPHYC'
+export const API_KEY = 'AY0JY2B-G7PMWET-HCSFNV0-4YG14TG';
+// export const API_KEY = '57M8D3Z-6R5MVH5-JBYJ6KR-VQPPHYC'
 // export const API_KEY = 'FZ0895J-YR2MMX2-HNJF7CA-8DMMKVE'
 // export const API_KEY = 'VGD10ZY-WNA4266-G8Q4TB8-NRRS4TA'
 

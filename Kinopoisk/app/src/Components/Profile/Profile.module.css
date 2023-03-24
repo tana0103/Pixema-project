@@ -90,14 +90,42 @@ form{
 	padding-left: 0px;
 }
 
+.btns{
+	margin-top: 25px;
+	display: flex;
+	justify-content: flex-end;
+}
+
 .btnchangepassword{
+width: 130px;
 border-radius: 5px;
-padding: 6px 10px;
+padding: 13px;
 background: linear-gradient(#000428, #004e92);
 border: none;
 color: antiquewhite;
 font-size: 18px;
 margin-bottom: 10px;
+margin-left: 25px;
+}
+
+.btnchangepassword:hover, 
+.btncancel:hover {
+	box-shadow: 0.3em 0.3em 5px rgba(122, 122, 122, 0.5);
+}
+.btnchangepassword:active,
+.btncancel:active {
+	box-shadow: 0.3em 0.3em 5px #004e92;
+}
+
+.btncancel{
+	width: 130px;
+	border-radius: 5px;
+	padding: 13px;
+	background: #242426;
+	border: none;
+	color: antiquewhite;
+	font-size: 18px;
+	margin-bottom: 10px;
 }
 
 @media (max-width: 1000px) {

@@ -90,7 +90,6 @@ export const Profile = () => {
 				  <input className={style.input} value={formData.confirmPassword} onChange={changeConfirmPasswordValue} />
 				  </label>
 			  </div>
-			  <div><button className={style.btnchangepassword} onClick={changePassword} >ChangePassword</button></div>
 		  </div>
 		  
 		  <title className={style.title}>Color mode</title>
@@ -106,7 +105,10 @@ export const Profile = () => {
 				 on
 			  </div>
 		  </div>
-		  <div></div>
+		  <div className={style.btns}>
+			  <button className={style.btncancel}>Cancel</button>
+			  <button className={style.btnchangepassword} onClick={changePassword} >Save</button>
+		  </div>
 	 </form>
   )
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { addMyFavoriteMovie } from '../../AppGlobalStore/MyFavoriteMovies/action'
 import { IMovie} from '../../Tools/IMovie'
 import style from './CardMovie.module.css'
 
@@ -7,7 +9,7 @@ type PropsCardType = {
 }
 
 export const CardMovie = (props: PropsCardType) => {
-	
+	const dispatch = useDispatch()
 	// const genre = props.element.genres?.name
 	
 	let arrGenresSlice = props.element.genres?.slice(0,3)
@@ -24,8 +26,11 @@ export const CardMovie = (props: PropsCardType) => {
 	// console.log(trailer);
 	
 	// console.log(genre);
-console.log(props);
-
+	console.log(props);
+	
+	const addMyFavoriteMoviesClick = () => {
+		dispatch(addMyFavoriteMovie(props.element))
+	}
 	
   return (
 	  <div className={style.card}>
@@ -37,11 +42,13 @@ console.log(props);
 		  </div> */}
 		  	<div className={style.reiting}>
 			 	{reiting?.imdb}
-		  	</div>
+		  </div>
+		  <div className={style.favorite} onClick={addMyFavoriteMoviesClick}>Буду смотреть</div>
 		  	<div>
 			  <h3>{filmName}</h3>
 			  <p>{genre}</p>
-			</div>
+		  </div>
+		  
 	 </div>
   )
 }
