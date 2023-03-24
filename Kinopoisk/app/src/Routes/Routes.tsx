@@ -11,7 +11,7 @@ import { SignUp } from '../Components/SignUp/SignUp';
 import { TitlePage } from '../Components/TitlePage/TitlePage';
 import { TrendsCard } from '../Components/TrendsCard/TrendsCard';
 import { Layout } from '../Layout/Layout';
-
+import { Navigate } from "react-router-dom";
 
 export const Routs = () => {
   return (
@@ -25,7 +25,7 @@ export const Routs = () => {
 			  <Route path='user' element={<SignUp />} />
 			  <Route path='confirm' element={<RegConfirm />} />
 			  <Route path='activate/:uid/:token' element={<Activate />} />
-			 
+			  <Route path='about-us' element={<Navigate to={'/about'} replace />} />
 			  {/* <Route path='user/logout' element={<LogOut />} />*/}
 			  <Route path='search/keyword' element={<SearchKeyword />} />
 			  <Route path='login' element={<SignInPage />} /> 

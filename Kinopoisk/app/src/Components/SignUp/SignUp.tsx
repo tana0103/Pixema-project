@@ -37,7 +37,7 @@ export const SignUp = () => {
 			email: e.currentTarget.email.value,
 			password: e.currentTarget.password.value
 		})
-		
+
 		console.log(result)
 		if (result === true) {
 			dispatch(registerUserAsyncAction(
@@ -104,9 +104,9 @@ export const SignUp = () => {
 		return <RegConfirm />
 	}
 
-	console.log(!register.isRegistered
-		? JSON.stringify(register.errors)
-		: null);
+	// console.log(!register.isRegistered
+	// 	? JSON.stringify(register.errors)
+	// 	: null);
 	console.log(JSON.stringify(register.isRegistered));
 	
 	return (

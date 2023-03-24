@@ -13,10 +13,10 @@ export const postNewPassword = async (uid: string, token: string, new_password: 
 	}
 	const request = new Request(url, params)
 	const response = await fetch(request)
-	const result = await response.json()
+	// const result = await response.json()
 	return {
 		ok: response.ok,
 		status: response.status,
-		data: result
+		// data: result
 	}
 }

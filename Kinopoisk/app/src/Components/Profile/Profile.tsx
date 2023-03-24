@@ -9,8 +9,7 @@ export const Profile = () => {
 	const dispatch = useDispatch()
 	const [stateRangeValue, setStateRangeValue] = useState(100)
 	const navigate = useNavigate()
-	const params = useParams()
-	const {uid, token} = params
+	const {uid, token} = useParams()
 	
 	const changeRangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const currentValue = +e.currentTarget.value
@@ -48,10 +47,13 @@ export const Profile = () => {
 	}
 	
 	const changePassword = () => {
-		if (formData.password === formData.confirmPassword) {
-			dispatch(newPasswordAsyncAction(params.uid!, formData.confirmPassword, () => navigate('login')))
-		}
-	}
+		if (formData.password === formData.confirmPassword ) {
+			alert('Ваш пароль изменен')
+			dispatch(newPasswordAsyncAction(uid!, token!, formData.confirmPassword, () => navigate('/user')))
+			console.log(uid, token, formData.confirmPassword);
+			
+		} else { alert('Произошла ошибка') }
+	} 
 
   return (
 	  <form className={style.formprofile}>
@@ -66,17 +68,20 @@ export const Profile = () => {
 		  </div>
 		  <title className={style.title}>Password</title>
 		  <div className={style.blok2}>
+			  <div className={style.blokinput}>
 			  <label className={style.namelabel}>New password
-				  <input className={style.input} />
+					  <input className={style.input} value={formData.password} onChange={changePasswordValue} />
 			  </label >
 			  <label className={style.namelabel}>Password
-				  <input className={style.input} value={formData.password} onChange={changePasswordValue} />
+				  <input className={style.input}/>
 			  </label>
 			  <label className={style.namelabel} >Confirm password
 				  <input className={style.input} value={formData.confirmPassword} onChange={changeConfirmPasswordValue} />
-			  </label>
+				  </label>
+			  </div>
+			  <div><button className={style.btnchangepassword} onClick={changePassword} >ChangePassword</button></div>
 		  </div>
-		  <div><button onClick={changePassword}>ChangePassword</button></div>
+		  
 		  <title className={style.title}>Color mode</title>
 		  <div className={style.blok1}>
 			  <div className={style.dark}>

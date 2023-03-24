@@ -5,18 +5,21 @@
 	color: black;
 	background: #E5E5E5;
 	margin: 30px;
-	
+	margin-left: 15%;
+	border-radius: 10px;
 }
 
 .btnconfirm{
-	background: blue;
+	background:linear-gradient(#000428, #004e92);
 	align-items: center;
 	justify-content: center;
 	color: #E5E5E5;
-	height: 40px;
-	margin: auto;
+	margin: 20px auto;
 	width: 50%;
-	font-size: 18px;
+	font-size: 20px;
+	border: none;
+	border-radius: 10px;
+	padding: 15px;
 }
 
 .divtitle{

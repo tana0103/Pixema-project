@@ -3,29 +3,48 @@ import { AppGlobalDispatch, AppGlobalState } from "../globalStore"
 
 export const CHANGE_PASSWORD = 'CHANGE_PASSWORD'
 
+// export type NewPasswordActionType = {
+// 	type: string,
+// 	newPassword: string,
+// 	token: string
+// }
 export type NewPasswordActionType = {
-	type: string,
-	newPassword: string,
-	token: string
+	type: string
 }
 
-const newPasswordAction = ( newPassword: string, token: string): NewPasswordActionType => {
+const newPasswordAction = (): NewPasswordActionType => {
 	return {
-		type: CHANGE_PASSWORD,
-		newPassword: newPassword,
-		token: token
+		type: CHANGE_PASSWORD
 	}
 }
 
+// const newPasswordAction = ( newPassword: string, token: string): NewPasswordActionType => {
+// 	return {
+// 		type: CHANGE_PASSWORD,
+// 		newPassword: newPassword,
+// 		token: token
+// 	}
+// }
 
-export const newPasswordAsyncAction = (uid: string, new_password: string,  cb:()=>void): any => {
-	return async (dispatch: AppGlobalDispatch, getState: () => AppGlobalState) => {
-		const accessToken = getState().auth.tokens!.access
-		const result = await postNewPassword(uid, new_password, accessToken)
-		console.log(new_password, uid, accessToken);
+
+// export const newPasswordAsyncAction = (uid: string, new_password: string,  cb:()=>void): any => {
+// 	return async (dispatch: AppGlobalDispatch, getState: () => AppGlobalState) => {
+// 		const accessToken = getState().auth.tokens!.access
+// 		const result = await postNewPassword(uid, new_password, accessToken)
+// 		console.log(new_password, uid, accessToken);
+// 		if (result.ok) {
+// 			dispatch(newPasswordAction(new_password, accessToken))
+// 			cb()
+// 		} else {return}
+// 	}
+// }
+export const newPasswordAsyncAction = (uid: string, token: string, new_password: string, cb: () => void): any => {
+	return async (dispatch: AppGlobalDispatch) => {
+		const result = await postNewPassword(uid, token, new_password)
+		console.log(new_password, token, uid);
 		if (result.ok) {
-			dispatch(newPasswordAction(new_password, accessToken))
+			dispatch(newPasswordAction())
 			cb()
-		} else {return}
+		} else { return }
 	}
 }

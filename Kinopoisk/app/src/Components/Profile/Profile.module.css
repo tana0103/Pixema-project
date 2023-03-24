@@ -1,6 +1,8 @@
 form{
 	margin-left: 15%;
 	margin-right: 5%;
+	margin-bottom: 0px;
+	padding: 0px;
 }
 
 .title {
@@ -24,9 +26,9 @@ form{
 	display: flex;
 	background: #242426;
 	border-radius: 10px;
-	margin-bottom: 20px;
 	justify-content: space-between;
 	color: #80858B;
+	padding: 10px;
 }
 
 .namelabel{
@@ -47,6 +49,7 @@ form{
 	display: flex;
 	align-items: flex-start;
 	margin: 10px 0;
+	padding-left: 5px;
 }
 
 .blok2 {
@@ -54,10 +57,15 @@ form{
 	background: #242426;
 	color: #80858B;
 	border-radius: 10px;
-	flex-direction:row-reverse;
+	flex-direction:column;
+	padding: 0px 10px;
+}
+
+.blokinput{
+	display: flex;
+	flex-direction: row-reverse;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	
 }
 
 .dark{
@@ -92,6 +100,15 @@ form{
 .inputrange{
 	width: 25%;
 	margin: 0 10px ;
+	padding-left: 0px;
 }
 
-
+.btnchangepassword{
+border-radius: 5px;
+padding: 6px 10px;
+background: linear-gradient(#000428, #004e92);
+border: none;
+color: antiquewhite;
+font-size: 18px;
+margin-bottom: 10px;
+}
