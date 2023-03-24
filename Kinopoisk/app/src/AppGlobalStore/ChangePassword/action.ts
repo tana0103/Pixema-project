@@ -3,28 +3,28 @@ import { AppGlobalDispatch, AppGlobalState } from "../globalStore"
 
 export const CHANGE_PASSWORD = 'CHANGE_PASSWORD'
 
-// export type NewPasswordActionType = {
-// 	type: string,
-// 	newPassword: string,
-// 	token: string
-// }
 export type NewPasswordActionType = {
-	type: string
+	type: string,
+	newPassword: string,
+	token: string
 }
+// export type NewPasswordActionType = {
+// 	type: string
+// }
 
-const newPasswordAction = (): NewPasswordActionType => {
-	return {
-		type: CHANGE_PASSWORD
-	}
-}
-
-// const newPasswordAction = ( newPassword: string, token: string): NewPasswordActionType => {
+// const newPasswordAction = (): NewPasswordActionType => {
 // 	return {
-// 		type: CHANGE_PASSWORD,
-// 		newPassword: newPassword,
-// 		token: token
+// 		type: CHANGE_PASSWORD
 // 	}
 // }
+
+const newPasswordAction = ( newPassword: string, token: string): NewPasswordActionType => {
+	return {
+		type: CHANGE_PASSWORD,
+		newPassword: newPassword,
+		token: token
+	}
+}
 
 
 // export const newPasswordAsyncAction = (uid: string, new_password: string,  cb:()=>void): any => {
@@ -38,12 +38,13 @@ const newPasswordAction = (): NewPasswordActionType => {
 // 		} else {return}
 // 	}
 // }
-export const newPasswordAsyncAction = (uid: string, token: string, new_password: string, cb: () => void): any => {
-	return async (dispatch: AppGlobalDispatch) => {
-		const result = await postNewPassword(uid, token, new_password)
-		console.log(new_password, token, uid);
+export const newPasswordAsyncAction = (current_password: string, new_password: string, cb: () => void): any => {
+	return async (dispatch: AppGlobalDispatch, getState: () => AppGlobalState) => {
+		const token = getState().auth.tokens!.access
+		const result = await postNewPassword(token, current_password, new_password)
+		console.log(new_password, token, current_password);
 		if (result.ok) {
-			dispatch(newPasswordAction())
+			dispatch(newPasswordAction(new_password, token))
 			cb()
 		} else { return }
 	}

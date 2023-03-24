@@ -8,15 +8,14 @@ import style from './index.module.css'
 
 export const LeftMenu = (props: PropsNavType) => {
 	return (
-	  <>
-	  <div className={props.className}>
+		< >
+	  	<div className={props.className}>
 		  	<Home/>
 		 	<Trends />
 		  	<Favorites />
 		  	<Settings />
 			<div className={style.last}>© All Rights Reserved</div>
-	  </div>
-		
+	 	 </div>
 		</>
   )
 }

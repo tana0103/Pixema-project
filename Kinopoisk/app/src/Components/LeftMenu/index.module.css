@@ -5,3 +5,36 @@
 	height: 420px;
 	color: #80858B;
 }
+
+.leftmenu {
+	width: 20%;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	margin-top: 70px;
+	position: fixed;
+	min-width: 15%;
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 19px;
+	line-height: 24px;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 20px;
+	height: 90vh;
+}
+
+@media (max-width: 1000px) {
+
+	.leftmenu {
+		display: none;
+	}
+}
+@media (max-width: 650px) {
+	.leftmenu {
+		display: none;
+		width: 0;
+	}
+}

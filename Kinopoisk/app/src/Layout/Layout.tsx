@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Outlet, NavLink } from "react-router-dom";
 import { AppGlobalState } from '../AppGlobalStore/globalStore';
@@ -13,6 +13,11 @@ import style from './Layout.module.css'
 
 
 export const Layout = () => {
+
+	const [state, setState] = useState(false)
+	const openList = () => {
+		setState(!state)
+	}
 	
 	const userName = useSelector((state: AppGlobalState) => state.userName)
 	console.log(userName);
@@ -38,7 +43,7 @@ export const Layout = () => {
 			   </NavLink>
 		  		</nav>
 		  		<nav>
-			  		<LeftMenu className={style.leftmenu} />
+			  	<LeftMenu className={style.leftmenu} />
 			  </nav>
 		  </header>
 	

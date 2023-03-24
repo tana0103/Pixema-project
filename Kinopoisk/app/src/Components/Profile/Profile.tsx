@@ -9,7 +9,9 @@ export const Profile = () => {
 	const dispatch = useDispatch()
 	const [stateRangeValue, setStateRangeValue] = useState(100)
 	const navigate = useNavigate()
-	const {uid, token} = useParams()
+	// const { uid, token } = useParams()
+	// console.log(uid, token);
+	
 	
 	const changeRangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const currentValue = +e.currentTarget.value
@@ -26,9 +28,18 @@ export const Profile = () => {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
+		oldPassword: '',
 		password: '',
 		confirmPassword: ''
 	})
+
+	const changeOldPasswordValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setFormData({
+			...formData,
+			oldPassword: currentValue
+		})
+	}
 
 	const changePasswordValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const currentValue = e.currentTarget.value
@@ -49,8 +60,8 @@ export const Profile = () => {
 	const changePassword = () => {
 		if (formData.password === formData.confirmPassword ) {
 			alert('Ваш пароль изменен')
-			dispatch(newPasswordAsyncAction(uid!, token!, formData.confirmPassword, () => navigate('/user')))
-			console.log(uid, token, formData.confirmPassword);
+			dispatch(newPasswordAsyncAction(formData.oldPassword, formData.confirmPassword, () => navigate('/user')))
+			console.log( formData.confirmPassword);
 			
 		} else { alert('Произошла ошибка') }
 	} 
@@ -72,8 +83,8 @@ export const Profile = () => {
 			  <label className={style.namelabel}>New password
 					  <input className={style.input} value={formData.password} onChange={changePasswordValue} />
 			  </label >
-			  <label className={style.namelabel}>Password
-				  <input className={style.input}/>
+			  <label className={style.namelabel2}>Password
+					  <input className={style.input} value ={formData.oldPassword} onChange={changeOldPasswordValue} />
 			  </label>
 			  <label className={style.namelabel} >Confirm password
 				  <input className={style.input} value={formData.confirmPassword} onChange={changeConfirmPasswordValue} />
@@ -83,7 +94,7 @@ export const Profile = () => {
 		  </div>
 		  
 		  <title className={style.title}>Color mode</title>
-		  <div className={style.blok1}>
+		  <div className={style.blok3}>
 			  <div className={style.dark}>
 				  <h2>Dark</h2>
 				  <h4> Use dark thema</h4>

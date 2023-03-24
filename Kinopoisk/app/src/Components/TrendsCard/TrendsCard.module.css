@@ -2,8 +2,16 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: 15%;
+	justify-content: space-around;
 }
 
 .input{
 	width: 100px;
+}
+
+@media (max-width: 1000px) {
+	.container {
+		margin: 0px;
+		justify-content: space-around;
+	}
 }
