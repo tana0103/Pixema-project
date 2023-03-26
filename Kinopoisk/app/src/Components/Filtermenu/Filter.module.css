@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Inter:wght@700&family=Open+Sans:ital,wght@0,700;1,400&family=Raleway:wght@500&family=Roboto+Condensed:ital,wght@1,300;1,400;1,700&family=Sassy+Frass&display=swap');
+
+.containerfilter{
+	margin-top: -20px;
+	padding: 15px;
+	border-radius: 10px;
+	color: beige;
+	width: 40%;
+	position:absolute;
+	background: radial-gradient(circle at 24.1% 68.8%, rgb(17, 17, 17) 0%, rgb(0, 0, 0) 99.4%);
+}
+
+.titlefilter{
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 500;
+
+}
+
+.btnraiting{
+	width: 50%;
+	border-radius: 5px 0px 0px 5px;
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	border: 1px solid rgb(21, 20, 20);
+	background: rgb(11, 11, 11);
+	color: rgb(157, 159, 157);
+	padding: 5px;
+}
+
+.btnyear {
+	width: 50%;
+	border-radius: 0px 5px 5px 0px;
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	border: 1px solid rgb(21, 20, 20);
+	background: rgb(11, 11, 11);
+	color: rgb(157, 159, 157);
+	padding: 5px;
+}
+.btnyear:active, .btnraiting:active{
+	background: rgb(68, 67, 67);
+}
+
+.hrfilter{
+	color: #323537;
+	margin: 15px 0px;
+}
+
+input{
+	border-radius: 5px;
+}
+
+.fromto{
+	display: flex;
+	justify-content: space-between;
+}
+
+.btnfromto{
+	width: 45%;
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	height: 70px;
+	background: rgb(68, 67, 67);
+	border-radius: 8px;
+	margin-bottom: 15px;
+}
+
+h3{
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 500;
+}
+
+.ulgenre{
+	font-size: 18px;
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 500;
+	color: #f9f2f2;
+}
+
+.btnclear,
+.btnresult{
+	width: 45%;
+	font-family: 'Exo 2';
+	font-style: normal;
+	font-weight: 500;
+	margin: 0;
+	padding: 10px ;
+	border-radius: 5px;
+	font-size: 18px;
+	border: none;
+	color:rgb(238, 240, 238)
+}
+
+.btnclear{
+	background: linear-gradient(#171821, #b9b9ba);
+}
+
+.btnresult{
+background: linear-gradient(#000428, #004e92);
+}

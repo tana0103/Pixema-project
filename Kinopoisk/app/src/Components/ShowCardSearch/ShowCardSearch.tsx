@@ -25,6 +25,12 @@ export const ShowCardSearch = () => {
         return el
       }
     })
+
+  // const filter = state.filter((el) => {
+  //   if (el.year==2021) {
+  //     return el
+  //   }
+  // })
   
     const filterLimit = filter.slice(0, 10)
 

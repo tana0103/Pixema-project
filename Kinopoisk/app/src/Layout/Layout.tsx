@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import { AppGlobalState } from '../AppGlobalStore/globalStore';
 import { LeftMenu } from '../Components/LeftMenu/LeftMenu';
 import { Burger } from '../Components/Navbar/Burger/Burger';
@@ -13,6 +13,7 @@ import style from './Layout.module.css'
 
 
 export const Layout = () => {
+	const navigate = useNavigate()
 
 	const [state, setState] = useState(false)
 	const openList = () => {
@@ -35,7 +36,7 @@ export const Layout = () => {
 	  <div className={style.layout}>
 		  <header>
 		  		<nav className={style.nav}>
-			   <Logo className={style.logo} />
+				  <div className={style.logo} onClick={() => navigate('/')}><Logo/></div>
 			   <Burger className={style.burger} />
 				<Search className={style.search} />
 			   <NavLink to='/login' className={style.user}>

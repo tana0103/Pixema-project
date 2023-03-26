@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { searchValueAction } from '../../../AppGlobalStore/SearchReducer/SearchReduser'
@@ -20,6 +20,8 @@ export const Search = (props: PropsNavType) => {
 		setValueInput(currentValue)
 		dispatch(searchValueAction(valueInput))
 	}
+
+
 	
 
 	return (
@@ -28,7 +30,7 @@ export const Search = (props: PropsNavType) => {
 					<input className={style.input} type='search'
 						placeholder={'Search'} value={valueInput} onChange={changeValueInput}>
 					</input>
-				<div className={style.glass} style={valueInput ? { display: 'block' } : { display: 'none' }} onClick={() => navigate('/search/keyword')}><BtnGlass /></div>
+				<div  className={style.glass} style={valueInput ? { display: 'block' } : { display: 'none' }} onClick={() => navigate('/search/keyword')}><BtnGlass /></div>
 				<Link to='/search' className={style.listlink}>
 					<SearchBtn />
 				</Link>

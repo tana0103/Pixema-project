@@ -9,7 +9,6 @@ import style from './TitlePage.module.css'
 
 export const TitlePage = () => {
   const genre: any = useSelector((state: AppGlobalState) => state.genres.genre)
-  
   const [state, setState] = useState<IMovie[]>([])
   useEffect(() => {
     getMoviesList(API_KEY, 10)
@@ -17,15 +16,6 @@ export const TitlePage = () => {
         setState(movies)
       })
   }, [])
-  console.log(state);
-
-  // const ganre = state.filter((el) => {
-  //   if (el.genres?.map((el) => el.name).includes('комедия')) {
-  //     return el
-  //   }
-  // })
-  // console.log(ganre);
-  
 
   return (
     <>

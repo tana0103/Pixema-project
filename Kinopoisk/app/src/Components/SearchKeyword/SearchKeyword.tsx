@@ -23,6 +23,7 @@ export const SearchKeyword = () => {
 		}
 		}, 300)
 		return () => clearTimeout(pause)
+		
 	}, [valueSearch])
 	
     return (

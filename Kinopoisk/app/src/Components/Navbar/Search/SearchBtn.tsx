@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { loadGenreAction, loadGenresAction } from '../../../AppGlobalStore/СhoiceGenre/reducer'
+import { Filter } from '../../Filtermenu/Filter'
 import style from './Search.module.css'
 
 
@@ -67,7 +68,8 @@ export const SearchBtn = () => {
 						<path d="M1 1L15 1M6 7H15M10 13H15" stroke="#80858B" fill="red" stroke-width="2" stroke-linecap="round" />
 					</svg>
 			</button>
-			<ul className={style.dropcontent} style={state ? { display: 'block' } : { display: 'none' }}>{genr}</ul>
+			<div className={style.dropcontainer} style={state ? { display: 'block' } : { display: 'none' }}><Filter /></div>
+			{/* <ul className={style.dropcontent} style={state ? { display: 'block' } : { display: 'none' }}>{genr}</ul> */}
 		</div>
 	)
 }

@@ -1,3 +1,4 @@
+import { API_KEY } from "../Constants/Constants"
 import { IMovie, IMovieProps } from "../Tools/IMovie"
 
 type MoveDocsType = {
@@ -16,4 +17,10 @@ export const getMoviesSearch = (key: string, search: string, limit: number) => {
 	return fetch(url + 'v1/movie?token=' +key  + '&limit=' + limit + '&name='+ search)
 		.then(response => response.json())
 		.then((response: MoveDocsType) => (response.docs))
+}
+
+export const getMovieById = (id: number|string) => {
+	return fetch(url + 'v1/movie/' + id + '?token=' + API_KEY)
+		.then(res => res.json())
+		.then((response: IMovie) => response)
 }
