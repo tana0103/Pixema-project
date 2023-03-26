@@ -24,3 +24,11 @@ export const getMovieById = (id: number|string) => {
 		.then(res => res.json())
 		.then((response: IMovie) => response)
 }
+
+export const getMoviesFilterList = ( yearFrom: number | null,
+	yearTo: number | null, ratingFrom: number | null, ratingTo: number | null,
+	country: string | null, genre: string | null) => {
+	return fetch(url + 'v1/movie' + '?year=' + yearFrom + '-' + yearTo +'premiere.country='+ country + '&genres.name='+ genre +'&rating.kp='+ ratingFrom+'-'+ ratingTo + '&token=' + API_KEY)
+		.then(res => res.json())
+		// .then((response: IMovie) => response)
+	}

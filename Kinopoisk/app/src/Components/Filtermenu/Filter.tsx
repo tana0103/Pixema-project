@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { filterAction } from '../../AppGlobalStore/FilterReducer/action';
 import { loadGenreAction } from '../../AppGlobalStore/СhoiceGenre/reducer';
 import style from './Filter.module.css'
 
 export const Filter = () => {
+	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const allGenres = [
 		{ label: "Семейные", value: "семейный" },
@@ -32,33 +35,66 @@ export const Filter = () => {
 		{ label: "Фэнтези", value: "фэнтези" },
 	];
 
-	const hadleMouseEnter = (genre: {
-		label: string;
-		value: string;
-	}) => {
-		dispatch(loadGenreAction(`${genre.value}`))
-		// const arrGenres = []
-		// arrGenres.push(`${genre.value}`)
-		// dispatch(loadGenresAction(arrGenres))
-		// console.log(arrGenres);
-
-		// console.log(`${genre.value}`);
+	const [stateNameMovie, setStateNameMovie] = useState('')
+	const changeValueNameMovie = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setStateNameMovie(currentValue)
 	}
-
+	const [stateYearFrom, setStateYearFrom] = useState('')
+	const changeValueYearFrom = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setStateYearFrom(currentValue)
+	}
+	const [stateYearTo, setStateYearTo] = useState('')
+	const changeValueYearTo = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setStateYearTo(currentValue)
+	}
+	const [stateRatingFrom, setStateRatingFrom] = useState('')
+	const changeValueRatingFrom = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setStateRatingFrom(currentValue)
+	}
+	const [stateRatingTo, setStateRatingTo] = useState('')
+	const changeValueRatingTo = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setStateRatingTo(currentValue)
+	}
+	const [stateCountry, setStateCountry] = useState('')
+	const changeValueCountry = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const currentValue = e.currentTarget.value
+		setStateCountry(currentValue)
+	}
+	const [stateGenre, setStateGenre] = useState('')
+	
 	let genr: any = allGenres.map((genre) => (
-		<li className={style.ulgenre} key={genre.label} onClick={() => hadleMouseEnter(genre)}>
+		<li className={style.ulgenre} key={genre.label} onClick={() =>setStateGenre(genre.value)}>
 			{genre.value}
 		</li>
 	))
+
+	const filterTurnOn = () => {
+		dispatch(filterAction(stateNameMovie, +stateYearFrom, +stateYearTo, +stateRatingFrom,
+			+stateRatingTo, stateCountry, stateGenre))
+		navigate('/search')
+	}
+	// const hadleMouseEnter = (genre: {
+	// 	label: string;
+	// 	value: string;
+	// }) => {
+	// 	dispatch(loadGenreAction(`${genre.value}`))
+	// }
+
+	// let genr: any = allGenres.map((genre) => (
+	// 	<li className={style.ulgenre} key={genre.label} onClick={() => hadleMouseEnter(genre)}>
+	// 		{genre.value}
+	// 	</li>
+	// ))
+
   return (
 	  <div className={style.containerfilter} >
 		  <div className={style.titlefilter}>
 			  <h2>Filters</h2>
-			  {/* <div>
-		  		<svg  width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-			 		<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6569 10.2429L7.41421 6.00023L11.6569 1.75759C12.0472 1.36727 12.0472 0.733701 11.6569 0.343378C11.2665 -0.0469454 10.633 -0.0469453 10.2426 0.343378L6 4.58602L1.75736 0.343378C1.36704 -0.0469453 0.733469 -0.0469454 0.343146 0.343378C-0.0471771 0.733701 -0.0471771 1.36727 0.343146 1.75759L4.58579 6.00023L0.343146 10.2429C-0.0478838 10.6339 -0.0471771 11.2668 0.343146 11.6571C0.733469 12.0474 1.36633 12.0481 1.75736 11.6571L6 7.41445L10.2426 11.6571C10.6337 12.0481 11.2665 12.0474 11.6569 11.6571C12.0472 11.2668 12.0479 10.6339 11.6569 10.2429Z" fill="#AFB2B6" />
-				  </svg>
-			  </div> */}
 		  </div>
 		  <div>
 			  <h3>Sort dy</h3>
@@ -70,24 +106,24 @@ export const Filter = () => {
 		  </div>
 		  <div>
 			  <h3>Full or short movie name</h3>
-			  <input placeholder='Your text'></input>
+			  <input placeholder='Your text' value={stateNameMovie} onChange={changeValueNameMovie} ></input>
 		  </div>
 		  <div>
 			  <h3>Country</h3>
-			  <input placeholder='Selected country'></input>
+			  <input placeholder='Selected country' value={stateCountry} onChange={changeValueCountry}></input>
 		  </div>
 		  <div>
 			  <h3>Year</h3>
 			  <div className={style.fromto}>
-				  <input className={style.btnfromto} placeholder='From'></input>
-				  <input className={style.btnfromto} placeholder='To'></input>
+				  <input className={style.btnfromto} placeholder='From' value={stateYearFrom} onChange={changeValueYearFrom}></input>
+				  <input className={style.btnfromto} placeholder='To' value={stateYearTo} onChange={changeValueYearTo}></input>
 			  </div>
 		  </div>
 		  <div>
 			  <h3>Rating</h3>
 			  <div className={style.fromto}>
-			  		<input className={style.btnfromto} placeholder='From'></input>
-					<input className={style.btnfromto} placeholder='To'></input>
+				  <input className={style.btnfromto} placeholder='From' value={stateRatingFrom} onChange={changeValueRatingFrom}></input>
+				  <input className={style.btnfromto} placeholder='To' value={stateRatingTo} onChange={changeValueRatingTo}></input>
 			  </div>
 		  </div>
 		  <div>
@@ -98,7 +134,7 @@ export const Filter = () => {
 		  </div>
 		  <div className={style.fromto}>
 			  <button className={style.btnclear}>Clear filter</button>
-			  <button className={style.btnresult}>Show results</button>
+			  <button className={style.btnresult} onClick={filterTurnOn}>Show results</button>
 		  </div>
 	 </div>
   )

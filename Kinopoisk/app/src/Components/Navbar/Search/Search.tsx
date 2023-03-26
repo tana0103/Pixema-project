@@ -31,9 +31,9 @@ export const Search = (props: PropsNavType) => {
 						placeholder={'Search'} value={valueInput} onChange={changeValueInput}>
 					</input>
 				<div  className={style.glass} style={valueInput ? { display: 'block' } : { display: 'none' }} onClick={() => navigate('/search/keyword')}><BtnGlass /></div>
-				<Link to='/search' className={style.listlink}>
+				{/* <Link to='/search' className={style.listlink}> */}
 					<SearchBtn />
-				</Link>
+				{/* </Link> */}
 			</label>
 		</div>
 	)

@@ -1,33 +1,44 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { AppGlobalState } from '../../AppGlobalStore/globalStore'
-import { API_KEY } from '../../Constants/Constants'
-import { getMoviesList, getMoviesSearch } from '../../Services/MovieService'
+import { getMoviesFilterList } from '../../Services/MovieService'
 import { IMovie } from '../../Tools/IMovie'
 import { CardMovie } from '../CardMovie/CardMovie'
 import style from './ShowCardSearch.module.css'
 
 export const ShowCardSearch = () => {
-  const genre: any = useSelector((state: AppGlobalState) => state.genres.genre)
+  // const genre: any = useSelector((state: AppGlobalState) => state.genres.genre)
 
   const [state, setState] = useState<IMovie[]>([])
 
-    useEffect(() => {
-      getMoviesList(API_KEY, 200)
-        .then((movies: IMovie[]) => {
-          setState(movies)
-        })
-    }, [])
-    console.log(state);
-  const god = 2016
-  const filter = state.filter((el) => {
-      const reating = el.rating!.imdb
-      console.log(reating);
+  const genre: any = useSelector((state: AppGlobalState) => state.filter.genre)
+  const country: any = useSelector((state: AppGlobalState) => state.filter.countryFilter)
+  const ratingFrom: any = useSelector((state: AppGlobalState) => state.filter.ratingFilterFrom)
+  const ratingTo: any = useSelector((state: AppGlobalState) => state.filter.ratingFilterTo)
+  const yearFrom: any = useSelector((state: AppGlobalState) => state.filter.yearFilterFrom)
+  const yearTo: any = useSelector((state: AppGlobalState) => state.filter.yearFilterTo)
+  const nameMovie: any = useSelector((state: AppGlobalState) => state.filter.valueNameFilter)
+  console.log(genre, country, ratingFrom, ratingTo, yearFrom, yearTo)
+
+  useEffect(() => {
+      if(genre && country && ratingFrom && ratingTo && yearFrom && yearTo)
+      getMoviesFilterList(yearFrom,yearTo,ratingFrom,ratingTo,country,genre)
+        // .then((movies: IMovie[]) => {
+        //   setState(movies)
+        // })
+    .then(res=> setState(res.docs));
     
-    if ((el.genres?.map((el) => el.name).includes(genre)) && ((el.year == god)||!god)  && (reating > 7.6 || reating == 7.6 )) {
-        return el
-      }
-    })
+  }, [genre, country, ratingFrom, ratingTo, yearFrom, yearTo])
+  //   console.log(state);
+  // const god = 2016
+  // const filter = state.filter((el) => {
+  //     const reating = el.rating!.imdb
+  //     console.log(reating);
+    
+  //   if ((el.genres?.map((el) => el.name).includes(genre)) && ((el.year == god)||!god)  && (reating > 7.6 || reating == 7.6 )) {
+  //       return el
+  //     }
+  //   })
   
 
   // const filter = state.filter((el) => {
@@ -36,7 +47,11 @@ export const ShowCardSearch = () => {
   //   }
   // })
   
-    const filterLimit = filter.slice(0, 10)
+  const filterLimit = state.slice(0, 10)
+  const arrfilter = filterLimit.map(movie =>
+      (<CardMovie element={movie} key={movie.id} />)
+    )
+  
 
     return (
       <>
@@ -44,9 +59,10 @@ export const ShowCardSearch = () => {
       <input className={style.input} value={genre} />
       </div>
         <div className={style.container}>
-          {filterLimit.map(movie =>
+          {arrfilter}
+          {/* {filterLimit.map(movie =>
             (<CardMovie element={movie} key={movie.id} />)
-          )}
+          )} */}
         </div>
       </>
     )

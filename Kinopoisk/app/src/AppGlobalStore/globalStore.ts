@@ -11,6 +11,7 @@ import { genreReducer } from './СhoiceGenre/reducer';
 import { themeReducer } from './Theme/reduser';
 import { searchReducer } from './SearchReducer/SearchReduser';
 import { myFavoriteMoviesReducer } from './MyFavoriteMovies/reducer';
+import { filterReducer } from './FilterReducer/reducer';
 
 export const globalReducer = combineReducers({
 	// modal: modalWinReducer,
@@ -24,7 +25,8 @@ export const globalReducer = combineReducers({
 	userName: getUserMeReducer,
 	genres: genreReducer,
 	theme: themeReducer,
-	searchValue: searchReducer
+	searchValue: searchReducer,
+	filter: filterReducer
 })
 
 export const globalStore = configureStore({

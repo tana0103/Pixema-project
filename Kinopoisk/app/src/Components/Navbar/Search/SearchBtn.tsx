@@ -7,58 +7,58 @@ import style from './Search.module.css'
 
 
 export const SearchBtn = () => {
-	const dispatch = useDispatch()
+	// const dispatch = useDispatch()
 	const [state, setState] = useState(false)
 	const openList = () => {
 		setState(!state)
 	}
-	const allGenres = [
-		{ label: "Семейные", value: "семейный" },
-		{ label: "Биографии", value: "биография" },
-		{ label: "Боевики", value: "боевик" },
-		{ label: "Вестерны", value: "вестерн" },
-		{ label: "Военные", value: "военный" },
-		{ label: "Детективы", value: "детектив" },
-		{ label: "Детские", value: "детский" },
-		{ label: "Документальные", value: "документальный" },
-		{ label: "Драмы", value: "драма" },
-		{ label: "Исторические", value: "история" },
-		{ label: "Комедии", value: "комедия" },
-		{ label: "Короткометражки", value: "короткометражка" },
-		{ label: "Криминал", value: "криминал" },
-		{ label: "Мелодрамы", value: "мелодрама" },
-		{ label: "Музыкальные", value: "музыка" },
-		{ label: "Мюзиклы", value: "мюзикл" },
-		{ label: "Новости", value: "новости" },
-		{ label: "Приключения", value: "приключения" },
-		{ label: "Спортивные", value: "спорт" },
-		{ label: "Триллеры", value: "триллер" },
-		{ label: "Ужасы", value: "ужасы" },
-		{ label: "Фантастика", value: "фантастика" },
-		{ label: "Фильмы-нуар", value: "фильм-нуар" },
-		{ label: "Фэнтези", value: "фэнтези" },
-	];
+	// const allGenres = [
+	// 	{ label: "Семейные", value: "семейный" },
+	// 	{ label: "Биографии", value: "биография" },
+	// 	{ label: "Боевики", value: "боевик" },
+	// 	{ label: "Вестерны", value: "вестерн" },
+	// 	{ label: "Военные", value: "военный" },
+	// 	{ label: "Детективы", value: "детектив" },
+	// 	{ label: "Детские", value: "детский" },
+	// 	{ label: "Документальные", value: "документальный" },
+	// 	{ label: "Драмы", value: "драма" },
+	// 	{ label: "Исторические", value: "история" },
+	// 	{ label: "Комедии", value: "комедия" },
+	// 	{ label: "Короткометражки", value: "короткометражка" },
+	// 	{ label: "Криминал", value: "криминал" },
+	// 	{ label: "Мелодрамы", value: "мелодрама" },
+	// 	{ label: "Музыкальные", value: "музыка" },
+	// 	{ label: "Мюзиклы", value: "мюзикл" },
+	// 	{ label: "Новости", value: "новости" },
+	// 	{ label: "Приключения", value: "приключения" },
+	// 	{ label: "Спортивные", value: "спорт" },
+	// 	{ label: "Триллеры", value: "триллер" },
+	// 	{ label: "Ужасы", value: "ужасы" },
+	// 	{ label: "Фантастика", value: "фантастика" },
+	// 	{ label: "Фильмы-нуар", value: "фильм-нуар" },
+	// 	{ label: "Фэнтези", value: "фэнтези" },
+	// ];
 
-	const hadleMouseEnter = (genre: {
-		label: string;
-		value: string;
-	}) => {
-		dispatch(loadGenreAction(`${genre.value}`))
-		setState(!state)
-		// const arrGenres = []
-		// arrGenres.push(`${genre.value}`)
-		// dispatch(loadGenresAction(arrGenres))
-		// console.log(arrGenres);
+	// const hadleMouseEnter = (genre: {
+	// 	label: string;
+	// 	value: string;
+	// }) => {
+	// 	dispatch(loadGenreAction(`${genre.value}`))
+	// 	setState(!state)
+	// 	// const arrGenres = []
+	// 	// arrGenres.push(`${genre.value}`)
+	// 	// dispatch(loadGenresAction(arrGenres))
+	// 	// console.log(arrGenres);
 
-		// console.log(`${genre.value}`);
-	}
+	// 	// console.log(`${genre.value}`);
+	// }
 
-	let genr: any = allGenres.map((genre) => (
-		<li key={genre.label} onClick={() => hadleMouseEnter(genre)}>
-			{genre.value}
-		</li>
-	))
-	// console.log(genr);
+	// let genr: any = allGenres.map((genre) => (
+	// 	<li key={genre.label} onClick={() => hadleMouseEnter(genre)}>
+	// 		{genre.value}
+	// 	</li>
+	// ))
+	// // console.log(genr);
 	
 
 	return (
