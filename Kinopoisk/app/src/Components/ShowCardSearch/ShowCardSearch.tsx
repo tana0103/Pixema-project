@@ -19,12 +19,16 @@ export const ShowCardSearch = () => {
         })
     }, [])
     console.log(state);
-  
-    const filter = state.filter((el) => {
-      if (el.genres?.map((el) => el.name).includes(genre)) {
+  const god = 2016
+  const filter = state.filter((el) => {
+      const reating = el.rating!.imdb
+      console.log(reating);
+    
+    if ((el.genres?.map((el) => el.name).includes(genre)) && ((el.year == god)||!god)  && (reating > 7.6 || reating == 7.6 )) {
         return el
       }
     })
+  
 
   // const filter = state.filter((el) => {
   //   if (el.year==2021) {
