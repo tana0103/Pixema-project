@@ -1,6 +1,6 @@
 import { activateUser, registerUser } from "../../Services/AuthServes"
 import { AppGlobalDispatch } from "../globalStore"
-import { BaseActionType, ObjectListType, UserType } from "../../Tools/types"
+import { BaseActionType, ObjectListType, UserType } from "../../tools/types"
 import { REGISTRATION_FAILED, REGISTRATION_SUCCESS } from "./reducer"
 
 export const ACTIVATION_SUCCESS = "ACTIVATION_SUCCESS"
@@ -55,9 +55,9 @@ export const registerUserAsyncAction = (username: string, email: string, passwor
 
 export const activateUserAsyncAction = (uid: string, token: string, cb: () => void): any => {
 	return async (dispatch: AppGlobalDispatch) => {
-		
+
 		const result = await activateUser(uid, token)
-		
+
 		if (result.ok) {
 			dispatch(activationSuccessAction())
 			cb()

@@ -55,7 +55,7 @@
 	margin: 15px 0px;
 }
 
-input{
+.inputfilter{
 	border-radius: 5px;
 }
 
@@ -65,9 +65,10 @@ input{
 }
 
 .btnfromto{
-	width: 45%;
+	width: 39%;
 	margin: 0;
 	padding: 0;
+	padding-left: 15px;
 }
 
 ul{
@@ -98,7 +99,7 @@ h3{
 	font-style: normal;
 	font-weight: 500;
 	margin: 0;
-	padding: 10px ;
+	padding: 10px 20px;
 	border-radius: 5px;
 	font-size: 18px;
 	border: none;
@@ -111,4 +112,12 @@ h3{
 
 .btnresult{
 background: linear-gradient(#000428, #004e92);
+}
+
+@media (max-width: 1000px) {
+	.containerfilter {
+		width: 100%;
+		
+		
+	}
 }

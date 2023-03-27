@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { searchValueAction } from '../../../AppGlobalStore/SearchReducer/SearchReduser'
-import { loadGenreAction, loadGenresAction } from '../../../AppGlobalStore/СhoiceGenre/reducer'
-import { PropsNavType } from '../../../Tools/Tools'
+import { PropsNavType } from '../../../tools/Tools'
 import { BtnGlass } from './Glass/Glass'
 import style from './Search.module.css'
 import { SearchBtn } from './SearchBtn'
@@ -22,17 +21,17 @@ export const Search = (props: PropsNavType) => {
 	}
 
 
-	
+
 
 	return (
 		<div className={props.className}>
 			<label className={style.label}>
-					<input className={style.input} type='search'
-						placeholder={'Search'} value={valueInput} onChange={changeValueInput}>
-					</input>
-				<div  className={style.glass} style={valueInput ? { display: 'block' } : { display: 'none' }} onClick={() => navigate('/search/keyword')}><BtnGlass /></div>
+				<input className={style.input} type='search'
+					placeholder={'Search'} value={valueInput} onChange={changeValueInput}>
+				</input>
+				<div className={style.glass} style={valueInput ? { display: 'block' } : { display: 'none' }} onClick={() => navigate('/search/keyword')}><BtnGlass /></div>
 				{/* <Link to='/search' className={style.listlink}> */}
-					<SearchBtn />
+				<SearchBtn />
 				{/* </Link> */}
 			</label>
 		</div>
@@ -108,7 +107,7 @@ export const Search = (props: PropsNavType) => {
 // 				{/* <button className={style.input} onClick={openList}>
 // 					<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 // 						<path d="M1 1L15 1M6 7H15M10 13H15" stroke="#80858B" fill="red" stroke-width="2" stroke-linecap="round" />
-// 				   </svg> 
+// 				   </svg>
 // 			  	</button> */}
 // 				<SearchBtn />
 // 			</label>

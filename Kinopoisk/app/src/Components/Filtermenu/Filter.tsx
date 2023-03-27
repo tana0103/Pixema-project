@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { filterAction } from '../../AppGlobalStore/FilterReducer/action';
-import { loadGenreAction } from '../../AppGlobalStore/СhoiceGenre/reducer';
 import style from './Filter.module.css'
 
 export const Filter = () => {
@@ -99,18 +98,18 @@ export const Filter = () => {
 		  <div>
 			  <h3>Sort dy</h3>
 			  <div>
-				  <button className={style.btnraiting}>Rating</button>
-				  <button className={style.btnyear}>Year</button>
+				  <button className={style.btnraiting} onClick={()=>navigate('/sort/rating')}>Rating</button>
+				  <button className={style.btnyear} onClick={() => navigate('/sort/year')}>Year</button>
 			  </div>
 			  <hr className={style.hrfilter} />
 		  </div>
-		  <div>
+		  {/* <div>
 			  <h3>Full or short movie name</h3>
 			  <input placeholder='Your text' value={stateNameMovie} onChange={changeValueNameMovie} ></input>
-		  </div>
+		  </div> */}
 		  <div>
 			  <h3>Country</h3>
-			  <input placeholder='Selected country' value={stateCountry} onChange={changeValueCountry}></input>
+			  <input className={style.inputfilter} placeholder='Selected country' value={stateCountry} onChange={changeValueCountry}></input>
 		  </div>
 		  <div>
 			  <h3>Year</h3>

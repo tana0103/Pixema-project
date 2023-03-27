@@ -23,7 +23,7 @@ export const SignInPage = () => {
 		dispatch(getTokenAsyncAction(email, password, () => navigate(fromPage, { replace: true })))
 	}
 
-	console.log(JSON.stringify(auth, null, 2));
+	// console.log(JSON.stringify(auth, null, 2));
 	
 
 	return (

@@ -1,17 +1,8 @@
-import React from 'react'
+import { ActionGenreType, ADD_GENRE, ADD_GENRE_LIST } from "./action"
 
-const ADD_GENRE = "ADD_GENRE"
-const ADD_GENRE_LIST = "ADD_GENRE_LIST"
-
-
-type GenreReducerType = {
+export type GenreReducerType = {
 	genre?: string|null,
 	genres?: string[],
-}
-
-type ActionGenreType = {
-	type: string,
-	payload: string | string[]
 }
 
 const defaultPostState: GenreReducerType= {
@@ -32,19 +23,5 @@ export const genreReducer = (state: GenreReducerType = defaultPostState, action:
 			}
 		default:
 			return state
-	}
-}
-
-export const loadGenreAction = (genre: string): ActionGenreType => {
-	return {
-		type: ADD_GENRE,
-		payload: genre
-	}
-}
-
-export const loadGenresAction = (genres: string[]): ActionGenreType => {
-	return {
-		type: ADD_GENRE_LIST,
-		payload: genres
 	}
 }

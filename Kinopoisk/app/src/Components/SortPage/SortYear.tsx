@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
-import { AppGlobalState } from '../../AppGlobalStore/globalStore'
-import { searchValueAction } from '../../AppGlobalStore/SearchReducer/SearchReduser'
-import { API_KEY } from '../../Constants/Constants'
-import { getMoviesSearch } from '../../Services/MovieService'
-import { IMovie } from '../../tools/IMovie'
+import { useState, useEffect } from 'react'
 import { CardMovie } from '../CardMovie/CardMovie'
-import style from './SearchKeyword.module.css'
+import { IMovie } from '../../tools/IMovie'
+import { sortMoviesList } from '../../Services/MovieService'
+import style from './Sort.module.css'
 
-export const SearchKeyword = () => {
-	const valueSearch = useSelector((state: AppGlobalState) => state.searchValue.value)
+export const SortYear = () => {
 	const [state, setState] = useState<IMovie[]>([])
 	const [offsetState, setOffsetState] = useState(0)
 	const [limitState, setlimitState] = useState(10)
@@ -18,18 +12,13 @@ export const SearchKeyword = () => {
 		setOffsetState(offsetState + 10)
 		setlimitState(limitState + 10)
 	}
-	useEffect(() => {
-		const pause = setTimeout(() => {
-			if (valueSearch) {
-				getMoviesSearch(API_KEY, valueSearch, limitState, offsetState)
-					.then((movies: IMovie[]) => {
-						setState(movies)
-					})
-			}
-		}, 300)
-		return () => clearTimeout(pause)
 
-	}, [valueSearch, limitState, offsetState])
+	useEffect(() => {
+		sortMoviesList('year', -1, limitState, offsetState)
+			.then((movies: IMovie[]) => {
+				setState(movies)
+			})
+	}, [limitState, offsetState])
 
 	return (
 		<>

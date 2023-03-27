@@ -14,6 +14,8 @@ import { Layout } from '../Layout/Layout';
 import { Navigate } from "react-router-dom";
 import { ShowCardFavorites } from '../Components/Favorites/ShowCardFavorites/ShowCardFavorites';
 import { ShowSelectedCard } from '../Components/ShowSelectedCard/ShowSelectedCard';
+import { SortRating } from '../Components/SortPage/SortRating';
+import { SortYear } from '../Components/SortPage/SortYear';
 
 export const Routs = () => {
   return (
@@ -30,9 +32,10 @@ export const Routs = () => {
 			  <Route path='confirm' element={<RegConfirm />} />
 			  <Route path='activate/:uid/:token' element={<Activate />} />
 			  <Route path='about-us' element={<Navigate to={'/about'} replace />} />
-			  {/* <Route path='user/logout' element={<LogOut />} />*/}
 			  <Route path='search/keyword' element={<SearchKeyword />} />
 			  <Route path='login' element={<SignInPage />} /> 
+			  <Route path='sort/rating' element={<SortRating />} />
+			  <Route path='sort/year' element={<SortYear />} />
 			  <Route path='*' element={<NotFound />} />
 		  </Route>
 	  </Routes>

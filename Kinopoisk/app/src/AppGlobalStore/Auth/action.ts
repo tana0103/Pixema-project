@@ -1,7 +1,7 @@
 import { getTokensUser } from "../../Services/AuthServes"
 import { fetchRefreshToken } from "../../Services/PostService"
 import { AppGlobalDispatch, AppGlobalState } from "../globalStore"
-import { BaseActionType, ObjectListType, tokenDto, UserType } from "../../Tools/types"
+import { BaseActionType, ObjectListType, tokenDto, UserType } from "../../tools/types"
 import { getUserMeAsyncAction } from "../UserMe/action"
 
 export const GET_TOKENS_SUCCESS = 'GET_TOKENS_SUCCESS'

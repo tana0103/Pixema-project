@@ -1,4 +1,4 @@
-import { ObjectListType, tokenDto } from "../../Tools/types"
+import { ObjectListType, tokenDto } from "../../tools/types"
 import { AuthUserActionType, CLEAR_TOKENS, GET_TOKENS_FAILED, GET_TOKENS_SUCCESS } from "./action"
 
 type AuthStateType = {

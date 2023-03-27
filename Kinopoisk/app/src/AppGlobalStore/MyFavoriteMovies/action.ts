@@ -1,4 +1,4 @@
-import { IMovie } from "../../Tools/IMovie"
+import { IMovie } from "../../tools/IMovie"
 
 
 export const ADD_MY_FAVORITE_MOVIES = 'ADD_MY_FAVORITE_MOVIES'
