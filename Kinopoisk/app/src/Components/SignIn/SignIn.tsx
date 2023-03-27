@@ -6,11 +6,9 @@ import { getTokenAsyncAction } from '../../AppGlobalStore/Auth/action'
 import { AppGlobalState } from '../../AppGlobalStore/globalStore'
 import style from './SignIn.module.css'
 
-
 export const SignInPage = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
-
 	const fromPage = location.state?.from?.pathname || '/'
 
 	const auth = useSelector((state: AppGlobalState) => state.auth)
@@ -22,9 +20,6 @@ export const SignInPage = () => {
 		const password = e.currentTarget.password.value
 		dispatch(getTokenAsyncAction(email, password, () => navigate(fromPage, { replace: true })))
 	}
-
-	// console.log(JSON.stringify(auth, null, 2));
-	
 
 	return (
 		<div className={style.fon}>
@@ -46,7 +41,6 @@ export const SignInPage = () => {
 				<button className={style.button}> Sign In</button>
 				<h6>Don’t have an account? <span onClick={() => navigate('/user')}> Sign Up</span></h6>
 			</form>
-			
 			<div className={style.footer}>
 				<p>
 					© All Rights Reserved

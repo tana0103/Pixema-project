@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { PropsNavType } from '../../../tools/Tools'
 import { Favorites } from '../../Favorites/Favorites'
 import { Home } from '../../Home/Home'
-import { LeftMenu } from '../../LeftMenu/LeftMenu'
 import { Settings } from '../../Settings/Settings'
 import { Trends } from '../../Trends/Trends'
 import style from './Burger.module.css'
@@ -23,7 +22,6 @@ export const Burger = (props: PropsNavType) => {
 				<li><Trends /></li>
 				<li><Favorites /></li>
 				<li><Settings /></li>
-
 			</ul>
 		</div>
 	)

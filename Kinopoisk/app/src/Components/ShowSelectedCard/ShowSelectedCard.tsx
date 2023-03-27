@@ -106,14 +106,6 @@ export const ShowSelectedCard = () => {
 					<div className={style.containerrecomend}>
 						{similarMovies}
 					</div>
-					{/* <div className={style.tablel}>
-						<h4 className={style.tablkey}>Director</h4>
-						<h4></h4>
-					</div>
-					<div className={style.tablel}>
-						<h4 className={style.tablkey}>Writers</h4>
-						<h4></h4>
-					</div> */}
 				</div>
 			</div>
 		</div>

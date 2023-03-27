@@ -2,16 +2,13 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { newPasswordAsyncAction } from '../../AppGlobalStore/ChangePassword/action'
-import { darkThemeAction, lightThemeAction } from '../../AppGlobalStore/Theme/reduser'
+import { darkThemeAction, lightThemeAction } from '../../AppGlobalStore/Theme/action'
 import style from './Profile.module.css'
 
 export const Profile = () => {
 	const dispatch = useDispatch()
 	const [stateRangeValue, setStateRangeValue] = useState(100)
 	const navigate = useNavigate()
-	// const { uid, token } = useParams()
-	// console.log(uid, token);
-	
 	
 	const changeRangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const currentValue = +e.currentTarget.value
@@ -58,11 +55,11 @@ export const Profile = () => {
 	}
 	
 	const changePassword = () => {
-		if (formData.password === formData.confirmPassword ) {
+		if (formData.password == '' || formData.confirmPassword == '') {
+			return
+		}else if(formData.password === formData.confirmPassword ) {
 			alert('Ваш пароль изменен')
-			dispatch(newPasswordAsyncAction(formData.oldPassword, formData.confirmPassword, () => navigate('/user')))
-			console.log( formData.confirmPassword);
-			
+			dispatch(newPasswordAsyncAction(formData.oldPassword, formData.confirmPassword, () => navigate('/login')))
 		} else { alert('Произошла ошибка') }
 	} 
 
@@ -91,7 +88,6 @@ export const Profile = () => {
 				  </label>
 			  </div>
 		  </div>
-		  
 		  <title className={style.title}>Color mode</title>
 		  <div className={style.blok3}>
 			  <div className={style.dark}>

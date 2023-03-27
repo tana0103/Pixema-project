@@ -37,13 +37,11 @@ input{
 	background: #323537;
 	color: #FFFFFF;
 	font-size: 15px;
-	/* padding-left: 15px; */
 }
 
 input::-webkit-input-placeholder{
 padding: 10px;
 }
-
 
 .button{
 	background: linear-gradient(#000428, #004e92);
@@ -56,7 +54,6 @@ padding: 10px;
 	align-items: center;
 	justify-content: center;
 	border: none;
-	/* padding: 10px; */
 }
 
 label{

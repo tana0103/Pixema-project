@@ -9,7 +9,7 @@ export const ShowCardFavorites = () => {
   
 	return (
 	  <div className={style.container}>
-		  {arrFavoritesMovies.map(movie => <CardMovie element={movie} />)}
+			{arrFavoritesMovies.map(movie => <CardMovie element={movie} key={movie.id} />)}
 	  </div>
   )
 }

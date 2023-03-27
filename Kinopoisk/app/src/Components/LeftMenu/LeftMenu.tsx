@@ -1,4 +1,3 @@
-import React from 'react'
 import { PropsNavType } from '../../tools/Tools'
 import { Favorites } from '../Favorites/Favorites'
 import { Home } from '../Home/Home'

@@ -34,9 +34,6 @@ export const ShowCardSearch = () => {
 
   return (
     <>
-      {/* <div>
-        <input className={style.input} value={genre} />
-      </div> */}
       <div className={style.container}>
         {state.map(movie =>
           (<CardMovie element={movie} key={movie.id} />)

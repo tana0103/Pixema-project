@@ -2,10 +2,7 @@ import { useState } from 'react'
 import { Filter } from '../../Filtermenu/Filter'
 import style from './Search.module.css'
 
-
-
 export const SearchBtn = () => {
-	// const dispatch = useDispatch()
 	const [state, setState] = useState(false)
 	const openList = () => {
 		setState(!state)
@@ -19,7 +16,6 @@ export const SearchBtn = () => {
 					</svg>
 			</button>
 			<div  style={state ? { display: 'block' } : { display: 'none' }}><Filter /></div>
-			{/* <ul className={style.dropcontent} style={state ? { display: 'block' } : { display: 'none' }}>{genr}</ul> */}
 		</div>
 	)
 }

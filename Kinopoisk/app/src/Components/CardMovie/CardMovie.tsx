@@ -1,4 +1,3 @@
-import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { addMyFavoriteMovie } from '../../AppGlobalStore/MyFavoriteMovies/action'
@@ -12,22 +11,15 @@ export type PropsCardType = {
 export const CardMovie = (props: PropsCardType) => {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
-	// const genre = props.element.genres?.name
 
 	let arrGenresSlice = props.element.genres?.slice(0, 3)
-	// console.log(arrGenresSlice)
 	let genre = arrGenresSlice?.map((el) => el.name).join(`, `)
-
-	// .charAt(0).toUpperCase() + el.name.slice(1)
 
 	let trailer = props.element.videos?.trailers.map((el) => el.url)
 	let shortDescription = props.element.shortDescription
 	let reiting = props.element.rating
 	let filmName = props.element.name
 	let poster = props.element.poster
-	// console.log(trailer);
-
-	// console.log(genre);
 
 	const addMyFavoriteMoviesClick = () => {
 		dispatch(addMyFavoriteMovie(props.element))
@@ -46,7 +38,6 @@ export const CardMovie = (props: PropsCardType) => {
 				<h3>{filmName}</h3>
 				<p>{genre}</p>
 			</div>
-
 		</div>
 	)
 }

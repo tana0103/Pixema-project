@@ -1,13 +1,7 @@
-const THEME_DARK = "THEME_DARK"
-const THEME_LIGHT = "THEME_LIGHT"
+import { ActionThemeType, THEME_DARK, THEME_LIGHT } from "./action"
 
 type ThemeType = {
 	className: string,
-}
-
-type ActionThemeType = {
-	type: string,
-	className: 'light' |'dark'
 }
 
 const defaultThemeState: ThemeType = {
@@ -28,19 +22,5 @@ export const themeReducer = (state: ThemeType = defaultThemeState, action: Actio
 			}
 		default:
 			return state
-	}
-}
-
-export const lightThemeAction = (): ActionThemeType => {
-	return {
-		type: THEME_LIGHT,
-		className: 'light'
-	}
-}
-
-export const darkThemeAction = (): ActionThemeType => {
-	return {
-		type: THEME_DARK,
-		className: 'dark'
 	}
 }

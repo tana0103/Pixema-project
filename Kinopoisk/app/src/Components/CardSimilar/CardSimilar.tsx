@@ -27,7 +27,6 @@ export const CardSimilar = (props: PropsCardType) => {
 			<div >
 				<h3>{filmName}</h3>
 			</div>
-
 		</div>
 	)
 }

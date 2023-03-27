@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Inter:wght@700&family=Open+Sans:ital,wght@0,700;1,400&family=Raleway:wght@500&family=Roboto+Condensed:ital,wght@1,300;1,400;1,700&family=Sassy+Frass&display=swap');
 
 .containerfilter{
-	/* margin-top: 20px;*/
 	padding: 15px; 
 	border-radius: 10px;
 	color: beige;
 	height: 90vh;
 	width: 25%;
 	position: fixed;
-	/* position:absolute; */
 	background: radial-gradient(circle at 24.1% 68.8%, rgb(17, 17, 17) 0%, rgb(0, 0, 0) 99.4%);
 }
 
@@ -20,7 +18,6 @@
 	font-family: 'Exo 2';
 	font-style: normal;
 	font-weight: 500;
-
 }
 
 .btnraiting{
@@ -48,7 +45,9 @@
 	color: rgb(157, 159, 157);
 	padding: 5px;
 }
-.btnyear:active, .btnraiting:active{
+
+.btnyear:active,
+.btnraiting:active{
 	background: rgb(68, 67, 67);
 }
 

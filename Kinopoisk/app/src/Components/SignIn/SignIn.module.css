@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Inter:wght@700&family=Open+Sans:ital,wght@0,700;1,400&family=Raleway:wght@500&family=Roboto+Condensed:ital,wght@1,300;1,400;1,700&family=Sassy+Frass&display=swap');
 
-
 .userform{
 	width: 35%;
 	margin: auto;
@@ -46,7 +45,6 @@ input{
 	background: #323537;
 	color: #FFFFFF;
 	font-size: 15px;
-	/* padding-left: 15px; */
 }
 
 input::-webkit-input-placeholder {

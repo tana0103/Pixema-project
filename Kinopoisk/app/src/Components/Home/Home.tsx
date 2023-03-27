@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import style from './Home.module.css'
 
@@ -11,7 +10,6 @@ export const Home = () => {
 		  		</svg>
 			  	Home
 		  </article>
-		  {/* <h2>Home</h2> */}
 	  </Link>
   )
 }

@@ -8,15 +8,6 @@ export type NewPasswordActionType = {
 	newPassword: string,
 	token: string
 }
-// export type NewPasswordActionType = {
-// 	type: string
-// }
-
-// const newPasswordAction = (): NewPasswordActionType => {
-// 	return {
-// 		type: CHANGE_PASSWORD
-// 	}
-// }
 
 const newPasswordAction = ( newPassword: string, token: string): NewPasswordActionType => {
 	return {
@@ -26,18 +17,6 @@ const newPasswordAction = ( newPassword: string, token: string): NewPasswordActi
 	}
 }
 
-
-// export const newPasswordAsyncAction = (uid: string, new_password: string,  cb:()=>void): any => {
-// 	return async (dispatch: AppGlobalDispatch, getState: () => AppGlobalState) => {
-// 		const accessToken = getState().auth.tokens!.access
-// 		const result = await postNewPassword(uid, new_password, accessToken)
-// 		console.log(new_password, uid, accessToken);
-// 		if (result.ok) {
-// 			dispatch(newPasswordAction(new_password, accessToken))
-// 			cb()
-// 		} else {return}
-// 	}
-// }
 export const newPasswordAsyncAction = (current_password: string, new_password: string, cb: () => void): any => {
 	return async (dispatch: AppGlobalDispatch, getState: () => AppGlobalState) => {
 		const token = getState().auth.tokens!.access

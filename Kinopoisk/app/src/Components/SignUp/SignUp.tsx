@@ -9,7 +9,6 @@ import { AppGlobalState } from '../../AppGlobalStore/globalStore'
 import { registerUserAsyncAction } from '../../AppGlobalStore/Register/action'
 import { writeUserAction } from '../../AppGlobalStore/User/action'
 
-
 const registerUserValidationSchema = {
 	username: { type: 'string', min: 6, max: 48 },
 	email: { type: 'email' },
@@ -53,7 +52,6 @@ export const SignUp = () => {
 		const password = e.currentTarget.password.value
 
 		dispatch(registerUserAsyncAction(username, email, password, () => navigate('/confirm')))
-		//()=> navigate('/confirm')
 	}
 
 	const [formData, setFormData] = useState({
@@ -118,8 +116,6 @@ export const SignUp = () => {
 			} */}
 			{/* <div>{JSON.stringify(register.isRegistered)}</div> */}
 
-			{/* <div className={style.nav} onClick={() => navigate('/')}>Back to home</div>
-			<title className={style.title}>Sign Up</title> */}
 			<form className={style.form} onSubmit={handleSubmit}>
 				<title className={style.title}>Sign Up</title> 
 				<label className={style.label}>Name</label>
@@ -133,8 +129,6 @@ export const SignUp = () => {
 				<button className={style.button} type="submit" onClick={chekPassword} onChange={() => { dispatch(writeUserAction(formData.name)) }}>Sign Up</button>
 				<h6>Already have an account?<span onClick={() => navigate('/login')}> Sign In</span></h6>
 			</form>
-			{/* <a>{formData.name}</a> */}
-			
 			<div className={style.footer}>
 				<p>
 					© All Rights Reserved

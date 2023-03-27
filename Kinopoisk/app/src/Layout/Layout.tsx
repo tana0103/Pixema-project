@@ -44,7 +44,6 @@ export const Layout = () => {
 			  		<LeftMenu className={style.leftmenu} />
 			  </nav>
 		  </header>
-	
 		  <main >
 			  <Outlet />
 		  </main>

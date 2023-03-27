@@ -7,11 +7,11 @@ import { Routs } from './Routes/Routes';
 function App() {
   const theme = useSelector((state:AppGlobalState)=> state.theme.className)
   return (
-    <body className={theme}>
+    <div className={theme}>
     <div className="App">
       <Routs/>
       </div>
-    </body>
+    </div>
   );
 }
 

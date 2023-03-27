@@ -77,18 +77,15 @@ export const Filter = () => {
 			+stateRatingTo, stateCountry, stateGenre))
 		navigate('/search')
 	}
-	// const hadleMouseEnter = (genre: {
-	// 	label: string;
-	// 	value: string;
-	// }) => {
-	// 	dispatch(loadGenreAction(`${genre.value}`))
-	// }
 
-	// let genr: any = allGenres.map((genre) => (
-	// 	<li className={style.ulgenre} key={genre.label} onClick={() => hadleMouseEnter(genre)}>
-	// 		{genre.value}
-	// 	</li>
-	// ))
+	const clearFilter = () => {
+		setStateCountry('')
+		setStateGenre('')
+		setStateRatingFrom('')
+		setStateRatingTo('')
+		setStateYearFrom('')
+		setStateYearTo('')
+	}
 
   return (
 	  <div className={style.containerfilter} >
@@ -103,10 +100,6 @@ export const Filter = () => {
 			  </div>
 			  <hr className={style.hrfilter} />
 		  </div>
-		  {/* <div>
-			  <h3>Full or short movie name</h3>
-			  <input placeholder='Your text' value={stateNameMovie} onChange={changeValueNameMovie} ></input>
-		  </div> */}
 		  <div>
 			  <h3>Country</h3>
 			  <input className={style.inputfilter} placeholder='Selected country' value={stateCountry} onChange={changeValueCountry}></input>
@@ -132,7 +125,7 @@ export const Filter = () => {
 			  </ul>
 		  </div>
 		  <div className={style.fromto}>
-			  <button className={style.btnclear}>Clear filter</button>
+			  <button className={style.btnclear} onClick = {clearFilter}>Clear filter</button>
 			  <button className={style.btnresult} onClick={filterTurnOn}>Show results</button>
 		  </div>
 	 </div>

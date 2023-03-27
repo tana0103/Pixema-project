@@ -1,5 +1,5 @@
 import { API_KEY } from "../Constants/Constants"
-import { IMovie, IMovieProps } from "../tools/IMovie"
+import { IMovie} from "../tools/IMovie"
 
 type MoveDocsType = {
 	docs: IMovie[]
@@ -44,5 +44,3 @@ export const sortMoviesList = (sortField: string, sortType: string|number, limit
 		.then(res => res.json())
 		.then((response: MoveDocsType) => (response.docs))
 }
-
-//https://api.kinopoisk.dev/v1/movie?sortField=year&sortType=1&token=NCBXJG2-F1C47T5-NQE7THH-5C5ZDD7&limit=10&offset=0

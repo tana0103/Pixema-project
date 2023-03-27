@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Inter:wght@700&family=Open+Sans:ital,wght@0,700;1,400&family=Raleway:wght@500&family=Roboto+Condensed:ital,wght@1,300;1,400;1,700&family=Sassy+Frass&display=swap');
 
-body.dark{
+div.dark{
   min-height: 100vh;
   background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
   color: #fff; 
@@ -9,7 +9,7 @@ body.dark{
   padding: 0px;
 }
 
-body.light {
+div.light {
   min-height: 100vh;
   background:radial-gradient(circle at 24.1% 68.8%, rgb(248, 246, 246) 0%, rgb(202, 199, 199) 99.4%);
   color: #180944;
@@ -21,7 +21,6 @@ body.light {
   text-align: center;
   margin: 0;
   padding: 0;
-  /* color: #80858B; */
   font-family: 'Exo 2';
   font-style: normal;
   font-weight: 500;
@@ -30,7 +29,6 @@ body.light {
 }
 
 .App-header {
-  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

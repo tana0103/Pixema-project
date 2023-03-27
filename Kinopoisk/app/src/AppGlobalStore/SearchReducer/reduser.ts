@@ -1,12 +1,7 @@
-const SEARCH_VALUE = "SEARCH_VALUE"
+import { ActionSearchType, SEARCH_VALUE } from "./action"
 
 type SearchType = {
 	value: string|null
-}
-
-type ActionSearchType = {
-	type: string,
-	value: string 
 }
 
 const defaultSearchState: SearchType = {
@@ -24,11 +19,3 @@ export const searchReducer = (state: SearchType = defaultSearchState, action: Ac
 			return state
 	}
 }
-
-export const searchValueAction = (value:string): ActionSearchType => {
-	return {
-		type: SEARCH_VALUE,
-		value: value
-	}
-}
-

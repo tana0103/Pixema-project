@@ -1,6 +1,5 @@
 import { IMovie } from "../../tools/IMovie"
 
-
 export const ADD_MY_FAVORITE_MOVIES = 'ADD_MY_FAVORITE_MOVIES'
 
 export type ArrActionType = {

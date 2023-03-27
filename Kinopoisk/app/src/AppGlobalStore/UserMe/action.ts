@@ -19,7 +19,6 @@ export const getUserMeAction = (data: { id: number, username: string }): UserMeA
 	payload: data
 })
 
-
 export const getUserMeAsyncAction = (): any => {
 	return async (dispatch: AppGlobalDispatch, getState: () => AppGlobalState) => {
 		const accessToken = getState().auth.tokens!.access

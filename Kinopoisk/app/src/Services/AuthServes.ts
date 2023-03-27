@@ -62,10 +62,10 @@ export const getTokensUser = async (email: string, password: string) => {
 		})
 	}
 	const request = new Request(url, params)
-	console.log({
-		"email": email,
-		"password": password
-	})
+	// console.log({
+	// 	"email": email,
+	// 	"password": password
+	// })
 	const response = await fetch(request)
 	const result = await response.json()
 	return {
