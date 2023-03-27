@@ -67,7 +67,7 @@ export const Filter = () => {
 	const [stateGenre, setStateGenre] = useState('')
 	
 	let genr: any = allGenres.map((genre) => (
-		<li className={style.ulgenre} key={genre.label} onClick={() =>setStateGenre(genre.value)}>
+		<li className={style.ulgenre} key={genre.label} onClick={() => setStateGenre(genre.value)}>
 			{genre.value}
 		</li>
 	))

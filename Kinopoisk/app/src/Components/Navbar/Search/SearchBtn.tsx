@@ -18,7 +18,7 @@ export const SearchBtn = () => {
 						<path d="M1 1L15 1M6 7H15M10 13H15" stroke="#80858B" fill="red" strokeWidth="2" strokeLinecap="round" />
 					</svg>
 			</button>
-			<div className={style.dropcontainer} style={state ? { display: 'block' } : { display: 'none' }}><Filter /></div>
+			<div  style={state ? { display: 'block' } : { display: 'none' }}><Filter /></div>
 			{/* <ul className={style.dropcontent} style={state ? { display: 'block' } : { display: 'none' }}>{genr}</ul> */}
 		</div>
 	)
