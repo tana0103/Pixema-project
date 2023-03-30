@@ -20,11 +20,13 @@ export const CardMovie = (props: PropsCardType) => {
 	let reiting = props.element.rating
 	let filmName = props.element.name
 	let poster = props.element.poster
-
+	// const arrayfavorite:any = []
 	const addMyFavoriteMoviesClick = () => {
 		dispatch(addMyFavoriteMovie(props.element))
+		// arrayfavorite.push(props.element)
+		// localStorage.setItem('key', JSON.stringify(arrayfavorite))
 	}
-
+	
 	return (
 		<div className={style.card}>
 			<div className={style.poster} onClick={() => navigate('/card/id', { state: props.element.id })}>

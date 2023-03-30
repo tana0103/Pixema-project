@@ -3,25 +3,14 @@ import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { newPasswordAsyncAction } from '../../AppGlobalStore/ChangePassword/action'
 import { darkThemeAction, lightThemeAction } from '../../AppGlobalStore/Theme/action'
+import { check } from '../SignUp/SignUp'
 import style from './Profile.module.css'
 
 export const Profile = () => {
 	const dispatch = useDispatch()
-	const [stateRangeValue, setStateRangeValue] = useState(100)
 	const navigate = useNavigate()
+	const [stateTheme, setStateTheme] = useState(true)
 	
-	const changeRangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const currentValue = +e.currentTarget.value
-		setStateRangeValue(currentValue)
-	}
-
-	if (stateRangeValue == 100) {
-		dispatch(darkThemeAction())
-	} else {
-		dispatch(lightThemeAction())
-	}
-	
-
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -63,6 +52,16 @@ export const Profile = () => {
 		} else { alert('Произошла ошибка') }
 	} 
 
+	const changeTheme = () => {
+		if (stateTheme) {
+			setStateTheme(!stateTheme)
+			dispatch(lightThemeAction())
+		} else {
+			setStateTheme(!stateTheme)
+			dispatch(darkThemeAction())
+		}
+	}
+
   return (
 	  <form className={style.formprofile}>
 		  <title className={style.title}>Profile</title>
@@ -92,13 +91,11 @@ export const Profile = () => {
 		  <div className={style.blok3}>
 			  <div className={style.dark}>
 				  <h2>Dark</h2>
-				  <h4> Use dark thema</h4>
+				  <h4 className={style.usedark}>Use dark thema</h4>
 			  </div>
 			  <div className={style.range}>
-				  off
-				  <input type='range' step='5' min={0} max={100} className={style.inputrange}
-					  value={+stateRangeValue} onChange={(e) => changeRangeValue(e)} />
-				 on
+				  Turn on
+				  <input type='checkbox' id='nputrange' className={style.inputrange} checked={stateTheme} onChange={changeTheme} />
 			  </div>
 		  </div>
 		  <div className={style.btns}>

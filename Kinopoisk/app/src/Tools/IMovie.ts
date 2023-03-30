@@ -1,4 +1,8 @@
-import { IFact } from "./IFact";
+export interface IFact {
+	spoiler: boolean;
+	type: string;
+	value: string;
+}
 
 interface IMovieExternalId {
 	imdb: string;

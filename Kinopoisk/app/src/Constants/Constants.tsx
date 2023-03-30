@@ -5,10 +5,10 @@ export const API_URL = 'https://api.kinopoisk.dev';
 // export const API_KEY = 'VGD10ZY-WNA4266-G8Q4TB8-NRRS4TA'
 // export const API_KEY = 'Q20XWNN-MVA4NNN-QMHV8JW-5C40XVK'
 //export const API_KEY = 'NCBXJG2-F1C47T5-NQE7THH-5C5ZDD7'
-// export const API_KEY = 'K475K1D-4MJ41VW-GK8Y2DN-5W04GP0'
-export const API_KEY = 'MJWZ6MA-83TMZT9-PYTGHXZ-41P8TQ1'
+//export const API_KEY = 'K475K1D-4MJ41VW-GK8Y2DN-5W04GP0'
+//export const API_KEY = 'MJWZ6MA-83TMZT9-PYTGHXZ-41P8TQ1'
 // export const API_KEY = 'DFYCN5A-7W5M0HY-PH5TK26-P6NSGRC'
-//export const API_KEY = 'DDW4SG3-A6N4NQP-NF99XK3-0QF9E79'
+export const API_KEY = 'DDW4SG3-A6N4NQP-NF99XK3-0QF9E79'
 
 export const allGenres = [
 	{ label: "Семейные", value: "семейный" },
