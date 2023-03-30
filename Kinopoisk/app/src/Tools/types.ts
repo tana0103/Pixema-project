@@ -32,3 +32,7 @@ export type tokenDto = {
 	access: string,
 	refresh: string
 }
+
+export type PropsNavType = {
+	className: string
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PropsNavType } from '../../../tools/Tools'
+import { PropsNavType } from '../../../tools/types'
 import { Favorites } from '../../Favorites/Favorites'
 import { Home } from '../../Home/Home'
 import { Settings } from '../../Settings/Settings'
