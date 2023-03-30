@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { CardMovie } from '../CardMovie/CardMovie'
-import { IMovie } from '../../tools/IMovie'
+import { IMovie } from '../../Tools/IMovie'
 import { sortMoviesList } from '../../Services/MovieService'
 import style from './Sort.module.css'
 

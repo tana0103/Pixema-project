@@ -1,5 +1,5 @@
 import { API_KEY } from "../Constants/Constants"
-import { IMovie} from "../tools/IMovie"
+import { IMovie} from "../Tools/IMovie"
 
 type MoveDocsType = {
 	docs: IMovie[]

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { API_KEY } from '../../Constants/Constants'
 import { getMoviesList } from '../../Services/MovieService'
-import { IMovie } from '../../tools/IMovie'
+import { IMovie } from '../../Tools/IMovie'
 import { CardMovie } from '../CardMovie/CardMovie'
 import style from './TrendsCard.module.css'
 

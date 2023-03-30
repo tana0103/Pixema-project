@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { AppGlobalState } from '../../AppGlobalStore/globalStore'
 import { getMoviesFilterList } from '../../Services/MovieService'
-import { IMovie } from '../../tools/IMovie'
+import { IMovie } from '../../Tools/IMovie'
 import { CardMovie } from '../CardMovie/CardMovie'
 import style from './ShowCardSearch.module.css'
 

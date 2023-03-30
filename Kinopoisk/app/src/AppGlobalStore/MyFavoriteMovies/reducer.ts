@@ -1,4 +1,4 @@
-import { IMovie } from "../../tools/IMovie"
+import { IMovie } from "../../Tools/IMovie"
 import { ADD_MY_FAVORITE_MOVIES, ArrActionType } from "./action"
 
 type ArrMoviesType = {

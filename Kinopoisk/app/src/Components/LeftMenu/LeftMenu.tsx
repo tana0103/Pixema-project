@@ -1,4 +1,4 @@
-import { PropsNavType } from '../../tools/types'
+import { PropsNavType } from '../../Tools/types'
 import { Favorites } from '../Favorites/Favorites'
 import { Home } from '../Home/Home'
 import { Settings } from '../Settings/Settings'

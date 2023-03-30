@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { addMyFavoriteMovie } from '../../AppGlobalStore/MyFavoriteMovies/action'
-import { IMovie } from '../../tools/IMovie'
+import { IMovie } from '../../Tools/IMovie'
 import style from './CardMovie.module.css'
 
 export type PropsCardType = {

@@ -1,6 +1,6 @@
 import { activateUser, registerUser } from "../../Services/AuthServes"
+import { BaseActionType, ObjectListType, UserType } from "../../Tools/types"
 import { AppGlobalDispatch } from "../globalStore"
-import { BaseActionType, ObjectListType, UserType } from "../../tools/types"
 import { REGISTRATION_FAILED, REGISTRATION_SUCCESS } from "./reducer"
 
 export const ACTIVATION_SUCCESS = "ACTIVATION_SUCCESS"

@@ -1,4 +1,4 @@
-import { ObjectListType, UserType } from "../../tools/types"
+import { ObjectListType, UserType } from "../../Tools/types"
 import { ACTIVATION_FAILED, ACTIVATION_SUCCESS, LoadRegisterUserActionType as LoadRegisterUserActionType } from "./action"
 
 export const REGISTRATION_FAILED = 'REGISTRATION_FAILED'

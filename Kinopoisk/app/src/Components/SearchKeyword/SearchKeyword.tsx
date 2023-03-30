@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { AppGlobalState } from '../../AppGlobalStore/globalStore'
 import { API_KEY } from '../../Constants/Constants'
 import { getMoviesSearch } from '../../Services/MovieService'
-import { IMovie } from '../../tools/IMovie'
+import { IMovie } from '../../Tools/IMovie'
 import { CardMovie } from '../CardMovie/CardMovie'
 import style from './SearchKeyword.module.css'
 

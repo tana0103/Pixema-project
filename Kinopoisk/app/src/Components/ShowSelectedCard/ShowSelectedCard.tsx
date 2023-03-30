@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom'
-import { IMovie } from '../../tools/IMovie'
+import { IMovie } from '../../Tools/IMovie'
 import { useEffect, useState } from 'react'
 import style from './ShowSelectedCard.module.css'
 import { getMovieById } from '../../Services/MovieService'
